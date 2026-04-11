@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <title>Croquis</title>
+  </head>
+  <body>
+    <h1>Croquis</h1>
+
+    <div id="setup-panel">
+      <div id="drop-zone">Drag image files here</div>
+      <table>
+        <tr>
+          <th>Loaded</th>
+          <td><input id="loaded" type="number" value="0" disabled /></td>
+          <td>files</td>
+        </tr>
+        <tr>
+          <th>Rounds</th>
+          <td><input id="rounds" type="number" value="5" min="1" /></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Interval</th>
+          <td><input id="interval" type="number" value="180" min="1" /></td>
+          <td>sec</td>
+        </tr>
+      </table>
+      <button id="start-button" disabled>Start</button>
+    </div>
+
+    <div id="control-panel" hidden>
+      <div id="current-round"></div>
+      <div id="timer"></div>
+      <button id="pause-button">Pause</button>
+      <button id="resume-button" hidden>Resume</button>
+      <button id="close-button" hidden>Close</button>
+    </div>
+
+    <div id="images"></div>
+  </body>
+</html>
