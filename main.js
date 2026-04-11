@@ -110,7 +110,7 @@ resumeButtonEl.addEventListener("click", function () {
 });
 
 closeButtonEl.addEventListener("click", function () {
-  location.href = "/";
+  location.reload();
 });
 
 window.addEventListener("tick", function () {
