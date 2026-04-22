@@ -1,6 +1,5 @@
 const setupPanelEl = document.getElementById("setup-panel");
 const dropZoneEl = document.getElementById("drop-zone");
-const loadedEl = document.getElementById("loaded");
 const roundsEl = document.getElementById("rounds");
 const intervalEl = document.getElementById("interval");
 const startButtonEl = document.getElementById("start-button");
@@ -44,7 +43,7 @@ function shuffle(array) {
 dropZoneEl.addEventListener("dragover", function (e) {
   e.preventDefault();
   dropZoneEl.classList.add("dragging");
-  dropZoneEl.textContent = "Drop it";
+  dropZoneEl.textContent = "Drop it.";
 });
 
 dropZoneEl.addEventListener("dragleave", function () {
@@ -65,10 +64,9 @@ dropZoneEl.addEventListener("drop", async function (e) {
     }
   }
 
-  loadedEl.value = files.length;
   roundsEl.max = files.length;
-  dropZoneEl.textContent = "Drag image files here";
-  startButtonEl.disabled = !(Number(roundsEl.value) <= Number(loadedEl.value));
+  dropZoneEl.innerHTML = `Now loaded: ${files.length} files.<br>Drag more images if needed.`;
+  startButtonEl.disabled = !(Number(roundsEl.value) <= files.length);
 });
 
 startButtonEl.addEventListener("click", function () {
